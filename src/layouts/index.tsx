@@ -1,6 +1,5 @@
 import {Link, Outlet, history} from 'umi';
 import styles from './index.less';
-import {Navigate} from 'umi'
 
 export default function Layout() {
     const goBack = () => {
@@ -39,8 +38,8 @@ export default function Layout() {
                 <div>{history.location.pathname}</div>
                 <div>{history.location.search}</div>
                 <div>{history.location.hash}</div>
-                <button onClick={goBack}>goBack</button>
-                <button onClick={pushTo}>pushTo</button>
+                <button type={"button"} onClick={goBack}>goBack</button>
+                <button type={"button"} onClick={pushTo}>pushTo</button>
             </div>
             {/*<Navigate to={'/docs'}/>*/}
             <Outlet/>
