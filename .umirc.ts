@@ -1,13 +1,16 @@
-import {defineConfig} from 'umi';
+import { defineConfig } from "umi";
 
 export default defineConfig({
-    npmClient: 'pnpm',
-    proxy: {
-        '/api': {
-            'target': 'http://localhost:8888/',
-            'changeOrigin': true,
-            'pathRewrite': { '^/api' : '' },
-        },
+  npmClient: "pnpm",
+  proxy: {
+    "/api": {
+      target: "http://localhost:8888/",
+      changeOrigin: true,
+      pathRewrite: { "^/api": "" },
     },
-    clientLoader: {}
+  },
+
+  clientLoader: {},
+  dva: {},
+  plugins: ["@umijs/plugins/dist/dva"],
 });
